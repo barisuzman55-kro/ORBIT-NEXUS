@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Türkçe karakterlerin doğru görünmesini sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sayfayı telefon ekranına uyarlar -->
+    <title>ORBIT NEXUS</title> <!-- Tarayıcı sekmesinde görünen başlık -->
+    <link rel="icon" href="Neon Uzay N Amblemi.png"> <!-- Sekme simgesinin dosya yolunu belirtir -->
+    <link rel="stylesheet" href="style.css"> <!-- Sayfanın tasarım dosyasını bağlar -->
+    <script type="importmap">
+{
+  "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+    <header id="home"> <!-- Sayfanın üst başlık bölümü -->
+        <h1>ORBIT NEXUS</h1>
+        <p>Explore the universe, discover the unknown, and go beyond the stars</p>
+    </header>
+
+    <nav> <!-- Sayfa bölümlerine gitmek için menüde kullanılır -->
+        <a href="#home">Home</a> <!-- home kimlikli başlığa gider -->
+        <a href="#solar-system">Solar system</a> <!-- Güneş sistemi bölümüne gider -->
+    </nav>
+
+    <main> <!-- Sayfanın ana içeriğini tutar -->
+        <section id="solar-system"> <!-- Güneş sistemiyle ilgili öğeleri bir arada tutar -->
+            <h2>Explore Our Solar System</h2>
+            <p>Discover the planets, moons, and wonders of our solar system.</p>
+            <div id="threeScene"></div>
+
+            <button id="exploreButton">Explore Earth</button> <!-- JavaScript bu butona tıklanınca Dünya bilgisini gösterir -->
+            <button id="marsButton">Explore Mars</button> <!-- JavaScript bu butona tıklanınca Mars bilgisini gösterir -->
+            <button id="jupiterButton">Explore Jupiter</button> <!-- JavaScript bu butona tıklanınca Jupiter bilgisini gösterir -->
+            <p id="planetInfo">Planet information will appear</p> <!-- JavaScript seçilen gezegenin bilgisini buraya yazar -->
+            <div id="planetContainer"></div> <!-- JavaScript gezegen kartlarını bu alana ekler -->
+        </section>
+    </main>
+
+    <script type="module" src="script.js"></script> <!-- JavaScript dosyasını sayfaya bağlar -->
+</body>
+</html>

@@ -1,0 +1,100 @@
+/* Sayfanın genel ayarları */
+h1{
+color: gold; /* Başlık yazısının rengini altın yapar */
+font-size: 40px; /* Başlık yazısının boyutunu belirler */
+padding: 15px; /* Yazı ile çerçeve arasında boşluk bırakır */
+border: 2px; /* Çerçeve kalınlığını belirler */
+border-color: gold; /* Çerçevenin rengini belirler */
+border-style: solid; /* Çerçeveyi düz çizgi yapar */
+border-radius: 10px; /* Çerçeve köşelerini yuvarlar */
+width: 400px; /* Başlığın genişliğini belirler */
+text-align: center; /* Başlığı yatayda ortalar */
+margin:auto; /* Başlık kutusunu ortalar */
+
+}
+body{
+    background-color:  #101827; /* Sayfanın arka plan rengini belirler */
+    color: white; /* Varsayılan yazı rengini beyaz yapar */
+    font-family: Arial, Helvetica, sans-serif; /* Sayfada kullanılacak yazı tiplerini belirler */
+}
+/* Gezinme menüsü */
+nav{
+    display: flex; /* Menü öğelerini esnek bir satırda dizer */
+    justify-content: space-evenly; /* Menü öğeleri arasında eşit boşluk bırakır */
+    align-items: center; /* Menü öğelerini dikeyde ortalar */
+    gap: 30px; /* Menü öğeleri arasında boşluk bırakır */
+    flex-direction: row; /* Menü öğelerini yatay sıralar */
+}
+   
+nav a{
+    color: white; /* Menü bağlantılarının rengini belirler */
+    font-size: 18px; /* Menü yazılarının boyutunu belirler */
+    text-decoration: none; /* Bağlantı alt çizgisini kaldırır */
+     transition: 0.3s; /* Durum değişikliklerini yumuşatır */
+}
+
+nav a:visited{
+    color: red; /* Daha önce ziyaret edilen bağlantıyı kırmızı gösterir */
+}
+
+nav a:hover{
+color: gold; /* Fare bağlantının üzerindeyken rengini değiştirir */
+}
+nav a:active{
+    color: aqua; /* Bağlantı tıklanırken yazıyı turkuaz yapar */
+    outline: black 2px solid; /* Tıklama sırasında çevresine çerçeve çizer */
+}
+*{
+    box-sizing: border-box; /* Ölçülere kenarlık ve iç boşluğu dahil eder */
+}
+
+    
+
+/* Güneş sistemi ve gezegen kartları */
+#solar-system{
+    display: grid; /* Bölüm içeriğini satır ve sütunlara dizer */
+    justify-content: center; /* Izgarayı yatayda ortalar */
+    align-items: center; /* Izgara öğelerini dikeyde ortalar */
+    gap: 20px; /* Izgara öğeleri arasında boşluk bırakır */
+    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr)); /* Ekrana göre sütun sayısını ayarlar */
+    
+}
+.card {
+    position: relative; /* Kart içindeki konumlandırmaya temel olur */
+    transition: transform 0.3s ; /* Büyüme efektini yumuşatır */
+    overflow: hidden; /* Kart dışına taşan içeriği gizler */
+    padding: 14px; /* Kartın içinde boşluk bırakır */
+    border: 1px solid rgba(255, 215, 0, 0.25); /* Hafif altın renkli çerçeve çizer */
+    border-radius: 6px; /* Kart köşelerini hafif yuvarlar */
+    background: rgba(18, 30, 48, 0.9); /* Kart arka planını yarı saydam koyu yapar */
+}
+#planetContainer {
+    display: grid; /* Gezegen kartlarını ızgara düzeninde dizer */
+    grid-column: 1 / -1; /* Bulunduğu ızgara satırının tamamını kaplar */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); /* Kart sütunlarını ekrana göre oluşturur */
+    gap: 20px; /* Kartlar arasında boşluk bırakır */
+}
+.card h3 {
+    margin-top: 0; /* Kart başlığının üst boşluğunu kaldırır */
+}
+.planet-image {
+    display: block; /* Görseli ayrı satırda gösterir */
+    width: 100%; /* Görseli kart genişliğine uydurur */
+    aspect-ratio: 4 / 3; /* Görsel alanının en-boy oranını belirler */
+    object-fit: cover; /* Görseli bozmadan alana sığdırıp gerekirse kırpar */
+    border-radius: 4px; /* Görsel köşelerini hafif yuvarlar */
+}
+.card:hover {
+    transform: scale(1.05) translateY(-10px); /* Fare üstüne gelince kartı büyütüp yukarı kaldırır */
+    box-shadow: 0 4px 8px gold; /* Kartın arkasına altın gölge ekler */
+}
+/* Seçilen gezegen kartı */
+.selected {
+    border: 2px solid gold; /* Seçilen karta altın çerçeve ekler */
+    box-shadow: 0 0 15px gold; /* Seçilen kartın etrafına parıltı verir */
+}
+#threeScene {
+    width: 100%; /* 3D sahne alanını yatayda tam genişlik yapar */
+    height: 480px; /* 3D sahne alanının yüksekliğini belirler */
+ grid-column: 1 / -1; /* Bulunduğu ızgara satırının tamamını kaplar */
+}
